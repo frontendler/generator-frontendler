@@ -1,0 +1,28 @@
+.note {
+	@include border-radius(3px);
+	position: relative;
+	padding: $grid-margin/4 $grid-margin/2;
+	font-size: $font-size-text - 1px;
+	font-style: italic;
+	&.close {
+		padding: 10px 40px 10px 20px;
+		.close-btn {
+			@include transition-property(background-color, color);
+			@include transition-duration($transition-speed);
+			@include border-top-right-radius(2px);
+			@include border-bottom-left-radius(3px);
+			font-family: Arial;
+			font-style: normal;
+			font-size: 20px;
+			font-weight: bold;
+			text-align: center;
+			cursor: pointer;
+			position: absolute;
+			top: 0;
+			right: 0;
+			width: 20px;
+			height: 20px;
+			line-height: 20px;
+		}
+	}
+}

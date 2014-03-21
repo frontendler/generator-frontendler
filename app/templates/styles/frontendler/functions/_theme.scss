@@ -1,0 +1,70 @@
+@function theme-color($color-name,$color-status:false) {
+	@each $color in $theme-colors {
+		@if $color-name == nth($color, 1) and $color-status==false {
+			@return nth($color, 2);
+		}@else if $color-name == nth($color, 1) and $color-status=="background" {
+			@return nth($color, 2);
+		}@else if $color-name == nth($color, 1) and $color-status=="foreground" {
+			@return nth($color, 3);
+		}@else if $color-name == nth($color, 1) and $color-status=="background-hover" {
+			@return nth($color, 4);
+		}@else if $color-name == nth($color, 1) and $color-status=="foreground-hover" {
+			@return nth($color, 5);
+		}
+	}
+	@return "none";
+}
+@mixin theme-all($type){
+	@each $color in $theme-colors {
+		@include theme (nth($color, 1),$type);
+	}
+}
+@mixin theme($color,$type) {
+	&.#{$color} {
+		// background
+		@if $type == background {
+			background-color: theme-color($color,"background");
+			color: theme-color($color,"foreground");
+			&:hover{
+				background-color: theme-color($color,"background-hover");
+				color: theme-color($color,"foreground-hover");	
+			}
+		}
+		// input
+		@else if $type == input{
+			&:focus{
+				border: 1px solid theme-color($color,"background");
+				color: theme-color($color,"background-hover");	
+			}
+		}
+		// note
+		@else if $type == note {
+			background-color: theme-color($color,"background");
+			color: theme-color($color,"foreground");
+			.close-btn {
+				background-color: theme-color($color,"foreground");
+				color: theme-color($color,"background");
+				&:hover {
+					color: theme-color($color,"background");
+					background-color: theme-color($color,"foreground-hover");
+				}
+			}
+		}
+		// breadcrumb
+		@else if $type == breadcrumb {
+			background-color: theme-color($color,"background");
+			color: theme-color($color,"foreground");
+			&:after {
+				border-left-color: theme-color($color,"background");
+			}
+			&:hover{
+				background-color: theme-color($color,"background-hover");
+				&:after {
+					border-left-color: theme-color($color,"background-hover");
+					color: theme-color($color,"foreground-hover");
+				}
+			}
+		}
+		@content;
+	}
+}

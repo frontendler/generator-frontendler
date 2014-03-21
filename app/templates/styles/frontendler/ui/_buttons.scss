@@ -1,0 +1,16 @@
+.btn {
+	@include border-radius(3px);
+	@include transition-property("background-color", "color");
+	@include transition-duration($transition-speed);
+	@include theme(background, normal);
+	@include user-select(none);
+	@include box-sizing(border-box);
+	display: inline-block;
+	padding: $grid-margin/4 $grid-margin/2 ;
+	cursor: pointer;
+	white-space: nowrap;
+}
+
+.btn:hover {
+	@include theme(background, hover);
+}

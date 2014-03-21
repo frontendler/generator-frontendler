@@ -1,0 +1,117 @@
+@mixin grid-row($empty: false, $fluid: false) {
+	@if $empty == empty {
+		padding-left: $grid-margin / 2;
+		padding-right: $grid-margin / 2;
+	}
+	@if $fluid == fluid {
+		@include grid-device-screen(desktop) {
+			width: 100%;
+		}
+
+		@include grid-device-screen(desktop-large) {
+			width: 100%;	
+		}
+	}
+	@else {
+		@include grid-device-screen(desktop) {
+			width: $grid-device-desktop;
+		}
+
+		@include grid-device-screen(desktop-large) {
+			width: $grid-device-desktop-large;
+		}
+	}
+	@include pie-clearfix;
+	@include box-sizing(border-box);
+	@include grid-device-screen(phone) {
+		width: 100%;
+	}
+
+	@include grid-device-screen(tablet) {
+		width: 100%;
+	}
+
+	widows: 100%;
+	margin: 0 auto;
+	display: block;
+	position: relative;
+}
+
+@mixin grid-col($col, $cols: 12, $colapse: false) {
+	@include pie-clearfix;
+	@include box-sizing(border-box);
+	$width: 100% * $col / $cols;
+	@if $width != 100% {
+		float: left;
+	}
+	@else {
+		clear: both;
+	}
+	@if $colapse != colapse {
+		padding-left: $grid-margin / 2;
+		padding-right: $grid-margin / 2;
+	}
+	width: $width;
+	position: relative;
+	@include grid-device-screen(phone) {
+		width: 100%;
+		display: block;
+	}
+
+	@include grid-device-screen(tablet) {
+		width: 100%;
+		display: block;
+	}
+}
+
+@mixin grid-col-device($device, $col, $cols: 12, $colapse: false) {
+	@include grid-device-screen($device) {
+		$width: 100% * $col / $cols;
+		@if $width != 100% {
+			width: $width;
+		}
+		@if $colapse == colapse {
+			padding-left: 0;
+			padding-right: 0;
+		}
+	}
+}
+
+@mixin grid-device-screen($device) {
+	@if $device == phone {
+		@media only screen and (max-width: $grid-device-phone) {
+			@content;
+		}
+	}
+	@else if $device == tablet {
+		@media only screen and (min-width: $grid-device-phone) and (max-width: $grid-device-desktop) {
+			@content;
+		}
+	}
+	@else if $device == desktop {
+		@media only screen and (min-width: $grid-device-desktop) and (max-width: $grid-device-desktop-large) {
+			@content;
+		}
+	}
+	@else if $device == desktop-large {
+		@media only screen and (min-width: $grid-device-desktop-large) {
+			@content;
+		}
+	}
+	@else if $device == print {
+		@media print {
+			@content;
+		}
+	}
+	@else {
+		@media only screen and (#{#{#{#{#{#{#{#{#{#{#{#{#{$device}}}}}}}}}}}}}) {
+			@content;
+		}
+	}
+}
+
+@mixin grid-device-hide($device) {
+	@include grid-device-screen($device) {
+		display: none;
+	}
+}

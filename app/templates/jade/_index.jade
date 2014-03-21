@@ -1,0 +1,84 @@
+!!! 5
+html(lang="en")
+    head
+        title <%= appName %>
+        meta(charset='UTF-8')
+        meta(http-equiv='X-UA-Compatible', content='IE=edge')
+        meta(name='description',content='', )
+        meta(name='author',content='')
+        meta(name="viewport",content="width=device-width, initial-scale=1, user-scalable=no")
+
+
+        // build:css /assets/styles/main.css
+        link(href='/assets/styles/main.css', rel='stylesheet')
+        // endbuild
+
+        //build:js /assets/scripts/modernizr.js
+        script(src='/bower/modernizr/modernizr.js')
+        //endbuild
+
+        //fonts
+        link(href='http://fonts.googleapis.com/css?family=Grand+Hotel|Open+Sans:300italic,400italic,600italic,700italic,400,600,700,300',rel='stylesheet',type='text/css')
+
+	body
+		//[if lt IE 10]
+			p.browsehappy You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.
+		//[endif]
+		div.header
+			div.container
+				div.info
+					h1 Frontendler<small>Beta</small>
+					h2 Parabéns! Você acaba de instalar o frontendler. Divirta-se!
+					div.buttons
+						a.btn.ocean(href="/docs") Documentation
+						a.btn.blue(href="https://github.com/dbeff/Frontendler") Git Fork
+		div.about
+			div.container
+				div.item
+					h4 SASS
+					p Sass is the most mature, stable, and powerful professional grade CSS extension language in the world.
+				div.item
+					h4 Inspect reset
+					p A modern, HTML5-ready alternative to CSS resets.
+				div.item
+					h4 Semantic Grid
+					p Responsive SASS semantic grid.
+			div.container
+				div.item
+					h4 Font Awesome
+					p <small class="label ocean">coming soon</small>
+					//p Setting up Font Awesome can be as simple as adding two lines of code to your website.
+				div.item
+					h4 Form validation
+					p <small class="label ocean">coming soon</small>
+				div.item
+					h4 Plugins
+					p <small class="label ocean">coming soon</small>
+		br
+		br
+		br
+		br
+		br
+		div.footer
+			div.container
+				p Frontendler by Daniel Beff
+
+		// Footer
+		footer
+			// build:js /assets/scripts/plugins.js
+			script(src='/bower/jquery/jquery.js')
+			// endbuild
+			// build:js /assets/scripts/main.js
+			script(src='/assets/scripts/main.js')
+			// endbuild
+
+			//Google Analytics: change UA-XXXXX-X to be your site's ID.
+			script.
+				(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+				(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+				m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+				})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+				ga('create', 'UA-XXXXXXX-X', 'your_site.com.br');
+				ga('send', 'pageview');
+
