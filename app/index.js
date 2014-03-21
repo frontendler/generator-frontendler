@@ -62,7 +62,9 @@ var FrontendlerGenerator = yeoman.generators.Base.extend({
         this.copy('styles/main.scss', 'app/assets/styles/main.scss');
         this.copy('styles/main.scss', 'app/assets/styles/main.scss');
         this.copy('styles/frontendler/_core.scss', 'app/assets/styles/_core.scss');
-        this.copy('styles/frontendler/_frontendler.scss', 'app/assets/styles/_frontendler.scss');
+        
+        this.copy('styles/frontendler/_frontendler.scss', 'app/assets/styles/frontendler/_frontendler.scss');
+        this.copy('styles/frontendler/_settings.scss', 'app/assets/styles/frontendler/_settings.scss');
         this.copy('styles/frontendler/functions/_grid.scss', 'app/assets/styles/frontendler/functions/_grid.scss');
         this.copy('styles/frontendler/functions/_theme.scss', 'app/assets/styles/frontendler/functions/_theme.scss');
         this.copy('styles/frontendler/ui/_base.scss', 'app/assets/styles/frontendler/ui/_base.scss');
