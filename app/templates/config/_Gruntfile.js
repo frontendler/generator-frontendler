@@ -1,4 +1,3 @@
-// Generated on 2014-01-17 using generator-jade 0.5.4
 'use strict';
 
 // # Globbing
