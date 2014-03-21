@@ -76,7 +76,7 @@ var FrontendlerGenerator = yeoman.generators.Base.extend({
         this.copy('styles/frontendler/ui/_thumb.scss', 'app/styles/frontendler/ui/_thumb.scss');
     },
     js_files: function() {
-
+        this.copy('js/main.js', 'app/assets/scripts/main.js');
     },
     jade_files: function() {
     	this.copy('jade/_index.jade', 'app/jade/index.jade');
