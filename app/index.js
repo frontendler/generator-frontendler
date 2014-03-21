@@ -63,16 +63,16 @@ var FrontendlerGenerator = yeoman.generators.Base.extend({
         this.copy('styles/main.scss', 'app/assets/styles/main.scss');
         this.copy('styles/frontendler/_core.scss', 'app/assets/styles/_core.scss');
         this.copy('styles/frontendler/_frontendler.scss', 'app/assets/styles/_frontendler.scss');
-        this.copy('styles/frontendler/functions/_grid.scss', 'app/styles/frontendler/functions/_grid.scss');
-        this.copy('styles/frontendler/functions/_theme.scss', 'app/styles/frontendler/functions/_theme.scss');
-        this.copy('styles/frontendler/ui/_base.scss', 'app/styles/frontendler/ui/_base.scss');
-        this.copy('styles/frontendler/ui/_breadcrumb.scss', 'app/styles/frontendler/ui/_breadcrumb.scss');
-        this.copy('styles/frontendler/ui/_buttons.scss', 'app/styles/frontendler/ui/_buttons.scss');
-        this.copy('styles/frontendler/ui/_form.scss', 'app/styles/frontendler/ui/_form.scss');
-        this.copy('styles/frontendler/ui/_note.scss', 'app/styles/frontendler/ui/_note.scss');
-        this.copy('styles/frontendler/ui/_reset.scss', 'app/styles/frontendler/ui/_reset.scss');
-        this.copy('styles/frontendler/ui/_table.scss', 'app/styles/frontendler/ui/_table.scss');
-        this.copy('styles/frontendler/ui/_thumb.scss', 'app/styles/frontendler/ui/_thumb.scss');
+        this.copy('styles/frontendler/functions/_grid.scss', 'app/assets/styles/frontendler/functions/_grid.scss');
+        this.copy('styles/frontendler/functions/_theme.scss', 'app/assets/styles/frontendler/functions/_theme.scss');
+        this.copy('styles/frontendler/ui/_base.scss', 'app/assets/styles/frontendler/ui/_base.scss');
+        this.copy('styles/frontendler/ui/_breadcrumb.scss', 'app/assets/styles/frontendler/ui/_breadcrumb.scss');
+        this.copy('styles/frontendler/ui/_buttons.scss', 'app/assets/styles/frontendler/ui/_buttons.scss');
+        this.copy('styles/frontendler/ui/_form.scss', 'app/assets/styles/frontendler/ui/_form.scss');
+        this.copy('styles/frontendler/ui/_note.scss', 'app/assets/styles/frontendler/ui/_note.scss');
+        this.copy('styles/frontendler/ui/_reset.scss', 'app/assets/styles/frontendler/ui/_reset.scss');
+        this.copy('styles/frontendler/ui/_table.scss', 'app/assets/styles/frontendler/ui/_table.scss');
+        this.copy('styles/frontendler/ui/_thumb.scss', 'app/assets/styles/frontendler/ui/_thumb.scss');
     },
     js_files: function() {
         this.copy('js/main.js', 'app/assets/scripts/main.js');
