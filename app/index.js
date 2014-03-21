@@ -56,7 +56,6 @@ var FrontendlerGenerator = yeoman.generators.Base.extend({
         this.copy('config/.bowerrc', '.bowerrc');
         this.copy('config/.editorconfig', '.editorconfig');
         this.copy('config/.ftppass', '.ftppass');
-        this.copy('config/.gitignore', '.gitignore');
         this.copy('config/.jshintrc', '.jshintrc');
     },
     scss_files: function() {
