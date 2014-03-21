@@ -1,4 +1,4 @@
-# generator-frontendler [![Build Status](https://secure.travis-ci.org/dbeff/generator-frontendler.png?branch=master)](https://travis-ci.org/dbeff/generator-frontendler)
+# generator-frontendler 
 
 > [Yeoman](http://yeoman.io) generator
 
