@@ -1,6 +1,6 @@
 {
   "name": "generator-frontendler",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "Yeoman generator for Frontendler",
   "keywords": [
     "yeoman-generator",
@@ -9,6 +9,7 @@
   ],
   "license": "MIT",
   "main": "app/index.js",
+  "homepage": "https://github.com/dbeff/generator-frontendler",
   "repository": "git@github.com:dbeff/generator-frontendler.git",
   "author": {
     "name": "Daniel Beff",
