@@ -47,7 +47,15 @@ var FrontendlerGenerator = yeoman.Base.extend({
         this.copy('config/package.json', 'package.json');
         this.copy('config/README.md', 'README.md');
         //images
-        // this.copy('images/**/*', 'app/assets/images/');
+        this.copy('images/branding/favicon.png', 'app/assets/images/branding/favicon.png');
+        this.copy('images/branding/icon-57x57.png', 'app/assets/images/branding/icon-57x57.png');
+        this.copy('images/branding/icon-76x76.png', 'app/assets/images/branding/icon-76x76.png');
+        this.copy('images/branding/icon-120x120.png', 'app/assets/images/branding/icon-120x120.png');
+        this.copy('images/branding/icon-152x152.png', 'app/assets/images/branding/icon-152x152.png');
+        this.copy('images/branding/icon-192x192.png', 'app/assets/images/branding/icon-192x192.png');
+        this.copy('images/branding/ms-tile.png', 'app/assets/images/branding/ms-tile.png');
+        this.copy('images/branding/og-image.png', 'app/assets/images/branding/og-image.png');
+        this.copy('images/branding/startup.png', 'app/assets/images/branding/startup.png');
         //style
         this.copy('styles/main.scss', 'app/assets/styles/main.scss');
         this.copy('styles/_settings.scss', 'app/assets/styles/_settings.scss');
