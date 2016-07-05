@@ -5,7 +5,7 @@ var yeoman = require('yeoman-generator');
 var chalk = require('chalk');
 var mkdirp = require('mkdirp');
 
-var FrontendlerGenerator = yeoman.generators.Base.extend({
+var FrontendlerGenerator = yeoman.Base.extend({
     init: function() {
         this.pkg = require('../package.json');
 
@@ -15,30 +15,20 @@ var FrontendlerGenerator = yeoman.generators.Base.extend({
             }
         });
     },
-
-    askFor: function() {
+    prompting: function() {
         var done = this.async();
-
-        // have Yeoman greet the user
         this.log(this.yeoman);
-
-        // replace it with a short and sweet description of your generator
-        //this.log(chalk.magenta('You\'re using the fantastic Frontendler generator.'));
         this.log(chalk.magenta('Hello! welcome to Frontendler!\nNow we will setup and generate the project for you. :)'));
-
-        var prompts = [{
+        return this.prompt([{
             name: 'appName',
             message: 'what is your app name ?',
             default: 'Frontendler'
-        }];
-
-        this.prompt(prompts, function(props) {
-            this.appName = props.appName;
+        }]).then(function(answers) {
+            this.log('App name', answers.name);
             done();
         }.bind(this));
     },
-
-    app_files: function() {
+    writing: function() {
         //folders
         mkdirp('app');
         mkdirp('app/template/');
@@ -47,16 +37,25 @@ var FrontendlerGenerator = yeoman.generators.Base.extend({
         mkdirp('app/assets/scripts/');
         mkdirp('app/assets/styles/');
         //settings
-        this.copy('config/*', '.editorconfig');
+        this.copy('config/.editorconfig', '.editorconfig');
+        this.copy('config/.eslintignore', '.eslintignore');
+        this.copy('config/.eslintrc', '.eslintrc');
+        this.copy('config/.travis.yml', '.travis.yml');
+        this.copy('config/gulpfile.js', 'gulpfile.js');
+        this.copy('config/LICENSE', 'LICENSE');
+        this.copy('config/manifest.json', 'manifest.json');
+        this.copy('config/package.json', 'package.json');
+        this.copy('config/README.md', 'README.md');
         //images
-        this.copy('images/**/*', 'app/assets/images/');
+        // this.copy('images/**/*', 'app/assets/images/');
         //style
-        this.copy('styles/*', 'app/assets/styles/');
+        this.copy('styles/main.scss', 'app/assets/styles/main.scss');
+        this.copy('styles/_settings.scss', 'app/assets/styles/_settings.scss');
         //script
-        this.copy('scripts/*', 'app/assets/scripts/');
+        this.copy('scripts/main.js', 'app/assets/scripts/main.js');
         //template
-        this.copy('template/layout/*', 'app/template/layout/');
-        this.copy('template/*', 'app/template/');
+        this.copy('template/layout/_default.jade', 'app/template/layout/_default.jade');
+        this.copy('template/index.jade', 'app/template/index.jade');
     }
 });
 
