@@ -24,7 +24,7 @@ var FrontendlerGenerator = yeoman.generators.Base.extend({
 
         // replace it with a short and sweet description of your generator
         //this.log(chalk.magenta('You\'re using the fantastic Frontendler generator.'));
-        this.log(chalk.magenta('Hello! welcome to Frontendler!\nTell me how you want setup your project that i will generate then for you. :)'));
+        this.log(chalk.magenta('Hello! welcome to Frontendler!\nNow we will setup and generate the project for you. :)'));
 
         var prompts = [{
             name: 'appName',
@@ -43,23 +43,20 @@ var FrontendlerGenerator = yeoman.generators.Base.extend({
         mkdirp('app');
         mkdirp('app/template/');
         mkdirp('app/assets/images/');
+        mkdirp('app/assets/images/branding');
         mkdirp('app/assets/scripts/');
         mkdirp('app/assets/styles/');
         //settings
-        this.copy('config/package.json', 'package.json');
-        this.copy('config/gulpfile.js', 'gulpfile.js');
-        this.copy('config/.editorconfig', '.editorconfig');
-        this.copy('config/.eslintrc', '.eslintrc');
-        this.copy('config/.eslintignore', '.eslintignore');
-        this.copy('config/.gitignore', '.gitignore');
-        this.copy('config/manifest.json', 'manifest.json');
+        this.copy('config/*', '.editorconfig');
+        //images
+        this.copy('images/**/*', 'app/assets/images/');
         //style
-        this.copy('styles/main.scss', 'app/assets/styles/main.scss');
+        this.copy('styles/*', 'app/assets/styles/');
         //script
-        this.copy('scripts/main.js', 'app/assets/scripts/main.js');
+        this.copy('scripts/*', 'app/assets/scripts/');
         //template
-        this.copy('template/layout/_default.jade', 'app/template/layout/_default.jade');
-        this.copy('template/index.jade', 'app/template/index.jade');
+        this.copy('template/layout/*', 'app/template/layout/');
+        this.copy('template/*', 'app/template/');
     }
 });
 

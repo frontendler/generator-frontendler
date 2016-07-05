@@ -5,43 +5,44 @@ html(lang="en")
 		meta(charset='utf-8')
 		meta(http-equiv='X-UA-Compatible', content='IE=edge')
 		meta(name="viewport",content="width=device-width,initial-scale=1.0,user-scalable=no")
-		title <%= appName %>
+		title Frontendler
 		meta(name='description',content='The responsive development kit. Simple and efficient.')
-		// OPEN GRAPH
-		meta(property="og:title", content="<%= appName %>")
+		// SETTINGS - OPEN GRAPH
+		meta(property="og:title", content="Frontendler")
 		meta(property="og:type", content="website")
 		meta(property="og:url", content="http://frontendler.com.br")
 		meta(property="og:image", content="/assets/images/branding/og-image.png")
 		// SETTINGS - IOS
 		meta(name="apple-mobile-web-app-capable",content="yes")
 		meta(name="apple-mobile-web-app-status-bar-style",content="black")
-		meta(name="apple-mobile-web-app-title",content="<%= appName %>")
+		meta(name="apple-mobile-web-app-title",content="Frontendler")
 		link(rel='apple-touch-icon',href='/assets/images/branding/icon-57x57.png')
 		link(rel='apple-touch-icon',sizes='76x76',href='/assets/images/branding/icon-76x76.png')
 		link(rel='apple-touch-icon',sizes='120x120',href='/assets/images/branding/icon-120x120.png')
 		link(rel='apple-touch-icon',sizes='152x152',href= '/assets/images/branding/icon-152x152.png')
 		link(rel="apple-touch-startup-image",href="/assets/images/branding/startup.png")
-		// SETTINGS - ANDROID 
+		// SETTINGS - ANDROID
 		meta(name='mobile-web-app-capable', content='yes')
-		meta(name='application-name', content='<%= appName %>')
+		meta(name='application-name', content='Frontendler')
 		link(rel='icon', sizes='192x192', href='/assets/images/branding/icon-192x192.png')
 		// SETTINGS - WINDOWS
 		meta(name='msapplication-TileImage', content='/assets/images/branding/ms-tile.png')
 		meta(name='msapplication-TileColor', content='#1d2732')
 		// SETTINGS - DEFAULT
 		link(rel='icon', href='/assets/images/branding/favicon.png')
-		// CSS - FONT 
+		// STYLES - FONT
 		link(href='http://fonts.googleapis.com/css?family=Grand+Hotel|Open+Sans:400italic,400,600,700,300',rel='stylesheet',type='text/css')
-		// CSS - HEAD 
+		// STYLES - HEAD
 		// build:css /assets/styles/main.css
 		link(rel='stylesheet', href='/assets/styles/main.css')
 		// endbuild
-		// SCRIPT - HEAD 
+		// SCRIPTS - HEAD
 		script(src='https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js')
 		body
 			block content
 			script(src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js')
 			script(src='https://cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.min.js')
+			// SCRIPTS - BODY
 			// build:js /assets/scripts/main.js
 			script(src='/assets/scripts/main.js')
 			// endbuild

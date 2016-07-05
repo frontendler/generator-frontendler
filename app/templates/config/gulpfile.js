@@ -43,7 +43,7 @@ var AUTOPREFIXER_BROWSERS = [
 //-------------------------------------------------------------------
 
 gulp.task("styles", function() {
-    gulp.src(app + "/" + styles + "/**/*.scss")
+    return gulp.src(app + "/" + styles + "/**/*.scss")
         .pipe(plugins.plumber())
         .pipe(plugins.sourcemaps.init())
         .pipe(plugins.sass({
@@ -94,16 +94,11 @@ gulp.task("images", function() {
 });
 
 gulp.task("html", function() {
-    var assets = plugins.useref.assets({
-        searchPath: "{" + dev + "," + app + "}"
-    });
-    return gulp.src([dev + "/**/*.html"])
+    return gulp.src([app + "/**/*.html"])
         .pipe(plugins.plumber())
-        .pipe(assets)
+        .pipe(useref({ searchPath: "{" + dev + "," + app + "}" }))
         .pipe(plugins.if("*.js", plugins.uglify()))
         .pipe(plugins.if("*.css", plugins.csso()))
-        .pipe(assets.restore())
-        .pipe(plugins.useref())
         .pipe(plugins.if("*.html", plugins.minifyHtml()))
         .pipe(gulp.dest(prod + "/"))
         .pipe(plugins.size({
